@@ -13,6 +13,8 @@ class EmailParser
 
   def parse(text)
     bits = text.split(/[, ]/)
-    bits.each do {|x| x.strip!}
+    bits.each {|x| x.strip!}
+    bits.each {|y| initialize(y) if !@@all.include?(y)}
+      
   end
 end
