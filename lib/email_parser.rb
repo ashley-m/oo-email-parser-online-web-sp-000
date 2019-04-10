@@ -4,7 +4,7 @@
 # or whitespace (' ').
 require 'pry'
 class EmailParser
-  @all = []
+  @@all = []
   attr_accessor :list
 
   def initialize(unformatted)
@@ -12,9 +12,10 @@ class EmailParser
   end
 
   def parse
+    @@all.clear
     bits = @list.split(/[, ]/)
     bits.each {|x| x.strip!}
-    bits.each {|y| @all << y if !@all.include?(y)&&y!=""}
-    return @all
+    bits.each {|y| @@all << y if !@@all.include?(y)&&y!=""}
+    return @@all
   end
 end
