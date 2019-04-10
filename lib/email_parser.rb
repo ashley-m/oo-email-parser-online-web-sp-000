@@ -4,15 +4,10 @@
 # or whitespace (' ').
 class EmailParser
   @@all = []
-  attr_accessor :address
+  attr_accessor :list
 
-  def initialize(add)
-    @address = add
-    @@all << add
-  end
-
-  def parse(text)
-    bits = text.split(/[, ]/)
+  def parse
+    bits = @list.split(/[, ]/)
     bits.each {|x| x.strip!}
     bits.each {|y| initialize(y) if !@@all.include?(y)}
   end
