@@ -14,7 +14,7 @@ class EmailParser
   def parse
     bits = @list.split(/[, ]/)
     bits.each {|x| x.strip!}
-    bits.each {|y| @@all << y if !@@all.include?(y)||y!=""}
+    bits.each {|y| @@all << y if !@@all.include?(y)&&y!=""}
     binding.pry
   end
 end
