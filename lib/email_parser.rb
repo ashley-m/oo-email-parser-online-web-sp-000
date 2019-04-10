@@ -15,6 +15,6 @@ class EmailParser
     bits = text.split(/[, ]/)
     bits.each {|x| x.strip!}
     bits.each {|y| initialize(y) if !@@all.include?(y)}
-      
+
   end
 end
