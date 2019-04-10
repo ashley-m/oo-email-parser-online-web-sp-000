@@ -6,6 +6,10 @@ class EmailParser
   @@all = []
   attr_accessor :list
 
+  def initialize(unformatted)
+    @list = unformatted
+  end
+
   def parse
     bits = @list.split(/[, ]/)
     bits.each {|x| x.strip!}
